@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TradingView AI Copilot",
+  "version": "1.0.0",
+  "description": "Overlay panel on TradingView showing structure, indicators, Fibonacci, candle patterns and probability projections. Informational only — you decide the trades.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://www.tradingview.com/*",
+    "https://trading-view-ai-copilot.vercel.app/*",
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.tradingview.com/*"],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "TradingView AI Copilot"
+  }
+}
